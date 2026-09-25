@@ -154,13 +154,81 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (filled by roadmap) | | |
+| FOUND-01 | Phase 1 | Pending |
+| FOUND-02 | Phase 1 | Pending |
+| FOUND-03 | Phase 1 | Pending |
+| FOUND-04 | Phase 1 | Pending |
+| FOUND-05 | Phase 1 | Pending |
+| FOUND-06 | Phase 1 | Pending |
+| CONN-01 | Phase 1 | Pending |
+| CONN-02 | Phase 1 | Pending |
+| CONN-03 | Phase 1 | Pending |
+| CONN-04 | Phase 1 | Pending |
+| CONN-05 | Phase 1 | Pending |
+| COLL-01 | Phase 2 | Pending |
+| COLL-02 | Phase 2 | Pending |
+| COLL-03 | Phase 2 | Pending |
+| COLL-04 | Phase 2 | Pending |
+| COLL-05 | Phase 2 | Pending |
+| COLL-06 | Phase 2 | Pending |
+| COLL-07 | Phase 2 | Pending |
+| COLL-08 | Phase 2 | Pending |
+| COLL-09 | Phase 2 | Pending |
+| BRIEF-01 | Phase 2 | Pending |
+| BRIEF-02 | Phase 2 | Pending |
+| BRIEF-03 | Phase 2 | Pending |
+| BRIEF-04 | Phase 2 | Pending |
+| BRIEF-05 | Phase 2 | Pending |
+| BRIEF-06 | Phase 2 | Pending |
+| BRIEF-07 | Phase 2 | Pending |
+| DRAFT-01 | Phase 3 | Pending |
+| DRAFT-02 | Phase 3 | Pending |
+| DRAFT-03 | Phase 3 | Pending |
+| DRAFT-04 | Phase 3 | Pending |
+| DRAFT-05 | Phase 3 | Pending |
+| DRAFT-06 | Phase 3 | Pending |
+| DRAFT-07 | Phase 3 | Pending |
+| DRAFT-08 | Phase 3 | Pending |
+| DRAFT-09 | Phase 3 | Pending |
+| VOICE-01 | Phase 3 | Pending |
+| VOICE-02 | Phase 3 | Pending |
+| VOICE-03 | Phase 3 | Pending |
+| VOICE-04 | Phase 3 | Pending |
+| VOICE-05 | Phase 3 | Pending |
+| REVIEW-01 | Phase 3 | Pending |
+| REVIEW-02 | Phase 3 | Pending |
+| REVIEW-03 | Phase 3 | Pending |
+| REVIEW-04 | Phase 3 | Pending |
+| REVIEW-05 | Phase 3 | Pending |
+| REVIEW-06 | Phase 3 | Pending |
+| SEND-01 | Phase 4 | Pending |
+| SEND-02 | Phase 4 | Pending |
+| SEND-03 | Phase 4 | Pending |
+| SEND-04 | Phase 4 | Pending |
+| SEND-05 | Phase 4 | Pending |
+| SEND-06 | Phase 4 | Pending |
+| SEND-07 | Phase 4 | Pending |
+| AUDIT-01 | Phase 4 | Pending |
+| AUDIT-02 | Phase 4 | Pending |
+| EVAL-01 | Phase 5 | Pending |
+| EVAL-02 | Phase 5 | Pending |
+| EVAL-03 | Phase 5 | Pending |
+| EVAL-04 | Phase 5 | Pending |
+| EVAL-05 | Phase 5 | Pending |
+| EVAL-06 | Phase 5 | Pending |
+| EVAL-07 | Phase 5 | Pending |
+| EVAL-08 | Phase 5 | Pending |
+| AUTO-01 | Phase 5 | Pending |
+| AUTO-02 | Phase 5 | Pending |
+| AUTO-03 | Phase 5 | Pending |
+| AUTO-04 | Phase 5 | Pending |
+| AUTO-05 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 69 total
-- Mapped to phases: 0
-- Unmapped: 69
+- Mapped to phases: 69
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-09-25*
-*Last updated: 2026-09-25 after initial definition*
+*Last updated: 2026-09-25 after roadmap creation*
