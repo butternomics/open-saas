@@ -6,9 +6,9 @@ helper for that exists.
 
 from __future__ import annotations
 
-from datetime import datetime
 from typing import Any
 
+from pydantic import NaiveDatetime
 from sqlalchemy import JSON, Column, Index, String
 from sqlmodel import Field, SQLModel
 
@@ -23,7 +23,7 @@ class Post(SQLModel, table=True):
     source_url: str | None = None
     media_type: str | None = None
     media_refs_json: list[str] = Field(default_factory=list, sa_column=Column(JSON))
-    posted_at: datetime | None = None
+    posted_at: NaiveDatetime | None = None
     brief_json: dict | None = Field(default=None, sa_column=Column(JSON))
     brief_version: int = 0
     context_status: str = Field(
@@ -33,13 +33,13 @@ class Post(SQLModel, table=True):
     sensitivity_reason: str | None = None
     monitored: bool = False
     paused: bool = False
-    last_synced_at: datetime | None = None
+    last_synced_at: NaiveDatetime | None = None
     checkpoint_cursor: str | None = None
-    next_poll_at: datetime | None = None
+    next_poll_at: NaiveDatetime | None = None
     poll_interval_s: int | None = None
     quiet_cycles: int = 0
-    created_at: datetime = Field(default_factory=utcnow)
-    updated_at: datetime = Field(default_factory=utcnow)
+    created_at: NaiveDatetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class Comment(SQLModel, table=True):
@@ -54,15 +54,15 @@ class Comment(SQLModel, table=True):
     author_username: str | None = None
     text: str = ""
     is_own_reply: bool = False
-    created_at_platform: datetime | None = None
-    fetched_at: datetime = Field(default_factory=utcnow)
-    deleted_at: datetime | None = None
+    created_at_platform: NaiveDatetime | None = None
+    fetched_at: NaiveDatetime = Field(default_factory=utcnow)
+    deleted_at: NaiveDatetime | None = None
     handling_status: str = Field(
         default="new", sa_column=Column(String(32), nullable=False, index=True)
     )
     handled_by_draft_id: str | None = None
     audience_replied_after_butter: bool = False
-    updated_at: datetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class Draft(SQLModel, table=True):
@@ -87,12 +87,12 @@ class Draft(SQLModel, table=True):
     approved_text: str | None = None
     approved_text_hash: str | None = None
     approved_by: str | None = None
-    approved_at: datetime | None = None
+    approved_at: NaiveDatetime | None = None
     invalidated_reason: str | None = None
     auto_sent: bool = False
-    sent_at: datetime | None = None
-    created_at: datetime = Field(default_factory=utcnow)
-    updated_at: datetime = Field(default_factory=utcnow)
+    sent_at: NaiveDatetime | None = None
+    created_at: NaiveDatetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class OutboundTask(SQLModel, table=True):
@@ -107,15 +107,15 @@ class OutboundTask(SQLModel, table=True):
         default="pending", sa_column=Column(String(32), nullable=False, index=True)
     )
     lock_owner: str | None = None
-    locked_at: datetime | None = None
+    locked_at: NaiveDatetime | None = None
     attempts: int = 0
-    last_attempt_at: datetime | None = None
+    last_attempt_at: NaiveDatetime | None = None
     returned_reply_id: str | None = None
     error_class: str | None = Field(default=None, sa_column=Column(String(32)))
     error_detail: str | None = None
     reconciliation_note: str | None = None
-    created_at: datetime = Field(default_factory=utcnow)
-    updated_at: datetime = Field(default_factory=utcnow)
+    created_at: NaiveDatetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class Example(SQLModel, table=True):
@@ -129,8 +129,8 @@ class Example(SQLModel, table=True):
     source_comment_id: str | None = None
     reviewer: str | None = None
     notes: str | None = None
-    created_at: datetime = Field(default_factory=utcnow)
-    updated_at: datetime = Field(default_factory=utcnow)
+    created_at: NaiveDatetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class Knowledge(SQLModel, table=True):
@@ -140,12 +140,12 @@ class Knowledge(SQLModel, table=True):
     fact_text: str
     category: str | None = None
     source: str | None = None
-    valid_from: datetime | None = None
-    valid_until: datetime | None = None
+    valid_from: NaiveDatetime | None = None
+    valid_until: NaiveDatetime | None = None
     reviewer: str | None = None
     status: str = Field(default="active", sa_column=Column(String(32), nullable=False))
-    created_at: datetime = Field(default_factory=utcnow)
-    updated_at: datetime = Field(default_factory=utcnow)
+    created_at: NaiveDatetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class VoiceRules(SQLModel, table=True):
@@ -155,7 +155,7 @@ class VoiceRules(SQLModel, table=True):
     rules_text: str
     is_active: bool = True
     updated_by: str | None = None
-    updated_at: datetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class Setting(SQLModel, table=True):
@@ -163,7 +163,7 @@ class Setting(SQLModel, table=True):
 
     key: str = Field(primary_key=True)
     value_json: Any = Field(default=None, sa_column=Column(JSON))
-    updated_at: datetime = Field(default_factory=utcnow)
+    updated_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class AuditLog(SQLModel, table=True):
@@ -180,7 +180,7 @@ class AuditLog(SQLModel, table=True):
     original_text: str | None = None
     approved_text: str | None = None
     detail_json: dict | None = Field(default=None, sa_column=Column(JSON))
-    created_at: datetime = Field(default_factory=utcnow)
+    created_at: NaiveDatetime = Field(default_factory=utcnow)
 
 
 class EvalLabelRow(SQLModel, table=True):
@@ -192,4 +192,4 @@ class EvalLabelRow(SQLModel, table=True):
     label: str = Field(sa_column=Column(String(32), nullable=False))
     labeler: str | None = None
     note: str | None = None
-    created_at: datetime = Field(default_factory=utcnow)
+    created_at: NaiveDatetime = Field(default_factory=utcnow)
