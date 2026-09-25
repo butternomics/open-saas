@@ -48,3 +48,6 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
+# UP042: CONTEXT D-09 locks `class X(str, Enum)` for JSON-serializable string
+# enums; StrEnum is not equivalent for SQLModel column typing here.
+ignore = ["UP042"]
